@@ -10,15 +10,14 @@ public class CameraMovement : MonoBehaviour
     /// </summary>
     public CinemachineVirtualCamera[] VirtualCameras { set { m_virtualCameras = value; } }
     private CinemachineVirtualCamera[] m_virtualCameras;
+    private int m_currentCamera;
 
     /// <summary>
     /// Скорость перемещения камеры
     /// </summary>
     public float CameraSpeed { set { m_cameraSpeed = value; } }
     private float m_cameraSpeed;
-
-    private Vector2 m_cameraMoveVector;
-    private int m_currentCamera;
+    private Vector2 m_cameraMoveVector;    
 
     /// <summary>
     /// Инициализация
@@ -45,6 +44,18 @@ public class CameraMovement : MonoBehaviour
 
         m_currentCamera = (m_currentCamera + 1) < m_virtualCameras.Length ? m_currentCamera + 1 : 0;
         SetActiveCamera(m_currentCamera);
+    }
+
+    /// <summary>
+    /// Метод, вызываемый при срабатывании события перемещения мышкой
+    /// </summary>
+    /// <param name="context"></param>
+    public void OnMouseMove(InputAction.CallbackContext context) 
+    {
+        if (Mouse.current.leftButton.isPressed)
+            m_cameraMoveVector = context.ReadValue<Vector2>() * -0.5f;
+        if (Mouse.current.leftButton.wasReleasedThisFrame)
+            m_cameraMoveVector = Vector2.zero;
     }
 
     /// <summary>
