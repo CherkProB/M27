@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class CameraMovement : MonoBehaviour
 {
+    /*
     /// <summary>
     /// Массив камер, между которыми переключается пользователь
     /// </summary>
@@ -84,4 +85,5 @@ public class CameraMovement : MonoBehaviour
         foreach (CinemachineVirtualCamera cam in m_virtualCameras)
             cam.transform.position += moveVector * m_cameraSpeed * Time.deltaTime;
     }
+    */
 }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357aa28915e2d1543b0ef681af6748f4, type: 3}
+  m_Name: CityTileSet
+  m_EditorClassIdentifier: 
+  _tilesPrefab:
+  - {fileID: 2592183482499120620, guid: bbe09d89059a96548991235d79e86167, type: 3}
+  - {fileID: 5684984209611854895, guid: f61b282c30513f041b1e9998712be552, type: 3}
+  - {fileID: 8922279738051340770, guid: 24f914f9a89ec1f4b968d5a23441b7fe, type: 3}
+  - {fileID: 5568660139912617571, guid: e5e7df8020b11814b9ed4adef1c3b273, type: 3}
+  - {fileID: 2844905754815739645, guid: 2a28b9e82dd34834387e892d7fd6e353, type: 3}
