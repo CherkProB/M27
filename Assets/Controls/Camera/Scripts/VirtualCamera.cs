@@ -15,6 +15,8 @@ namespace M27.Camera
         private CinemachineVirtualCamera _cinemachine;
 
         public int Priority { get => _cinemachine.Priority; set => _cinemachine.Priority = value; }
+        public float YRotation { get => _cinemachine.transform.rotation.eulerAngles.y; }
+        public Quaternion Rotation { get => _cinemachine.transform.rotation; set => _cinemachine.transform.rotation = value; }
         
         private void Awake() =>
             _cinemachine = GetComponent<CinemachineVirtualCamera>();

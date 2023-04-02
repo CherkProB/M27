@@ -1,6 +1,4 @@
-using Cinemachine;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace M27.Camera
@@ -30,7 +28,7 @@ namespace M27.Camera
         public void OnLookAround(InputValue input) =>
             _behaviour.OnLookAround(input);
 
-        public void OnLookAroundToggle(InputValue input) 
+        public void OnLookAroundToggle(InputValue input)
         {
             _behaviour.OnLookAroundToggle(input);
             Cursor.lockState = _behaviour.IsLooking ? CursorLockMode.Locked : CursorLockMode.None;
@@ -38,27 +36,32 @@ namespace M27.Camera
 
         private void Update()
         {
-            if (_behaviour.MoveDirection != Vector3.zero)
-                foreach (VirtualCamera _vc in _virtualCameras) 
-                {
-                    _vc.Camera.transform.position += _behaviour.MoveDirection * _settings.CameraSpeed * Time.deltaTime;
+            if (_behaviour.MoveDirection != Vector3.zero) 
+            {
+                float _camRotation = _virtualCameras[_currentVirtualCamera].YRotation;
 
-                    /*
-                    float _camRotation = _vc.Camera.transform.rotation.eulerAngles.y;
-                    _vc.Camera.transform.position += 
-                        new Vector3(_behaviour.MoveDirection.x * Mathf.Cos(_camRotation * Mathf.Deg2Rad), 0, _behaviour.MoveDirection.z * Mathf.Sin(_camRotation * Mathf.Deg2Rad)) * _settings.CameraSpeed * Time.deltaTime;
-                    */
-                }
+                Vector3 _posDeltaZ = new Vector3(
+                     _behaviour.MoveDirection.z * Mathf.Sin(_camRotation * Mathf.Deg2Rad),
+                     0,
+                     _behaviour.MoveDirection.z * Mathf.Cos(_camRotation * Mathf.Deg2Rad));
+                
+                //TODO:
+                Vector3 _posDeltaX = new Vector3(
+                     _behaviour.MoveDirection.x * Mathf.Cos(_camRotation * Mathf.Deg2Rad),
+                     0,
+                     _behaviour.MoveDirection.x * Mathf.Sin(_camRotation * Mathf.Deg2Rad));
+
+
+                foreach (VirtualCamera _vc in _virtualCameras)
+                    _vc.Camera.transform.position += (_posDeltaX + _posDeltaZ )* _settings.CameraSpeed * Time.deltaTime;
+            }
 
             if (_behaviour.RotationDirection != Vector3.zero)
-                foreach (VirtualCamera _vc in _virtualCameras)
-                {
-                    Vector3 _currentQuat = _vc.Camera.transform.rotation.eulerAngles;
-                    _currentQuat += _behaviour.RotationDirection * _settings.MouseSensitivity * Time.deltaTime;
-                    _vc.Camera.transform.rotation = Quaternion.Euler(_currentQuat);
-
-                    //check -180 - 180
-                }
+            {
+                Vector3 _currentQuat = _virtualCameras[_currentVirtualCamera].Rotation.eulerAngles;
+                _currentQuat += _behaviour.RotationDirection * _settings.MouseSensitivity * Time.deltaTime;
+                _virtualCameras[_currentVirtualCamera].Rotation = Quaternion.Euler(_currentQuat);
+            }
 
         }
 
