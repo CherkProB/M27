@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
-  - component: {fileID: 963194232}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -459,14 +459,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
+  m_LocalRotation: {x: 0.17364816, y: -0, z: -0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 759360039}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: -0.18, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,8 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: eb4d118845326e84692c9ac88ec69f49, type: 3}
-  m_NotificationBehavior: 2
+  m_Actions: {fileID: -944628639613478452, guid: 900a23d33494e54439455db803a4a1d0, type: 3}
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -527,59 +527,27 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 963194232}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: OnChange
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 77cf3bc3-572b-4013-aab2-dbc53e5a20a3
-    m_ActionName: Camera/Change Camera[/Keyboard/space]
+      m_Calls: []
+    m_ActionId: 1e43f7f5-6e1e-4c80-b640-035eab1af52f
+    m_ActionName: Camera/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 963194232}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 39f85dd7-d4ab-4e8b-9645-48466d91b317
-    m_ActionName: Camera/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+      m_Calls: []
+    m_ActionId: 005869f2-73f8-4375-854e-be5f5d8def1b
+    m_ActionName: Camera/ChangeCamera[/Keyboard/space,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 963194232}
-        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
-        m_MethodName: OnMouseMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 1b11206f-7f24-49dd-9e05-f6bce580a580
-    m_ActionName: Camera/MouseMove[/Mouse/delta]
+      m_Calls: []
+    m_ActionId: 32c9bc09-10ee-49fa-b350-c943f7e9fc9e
+    m_ActionName: Camera/LookAround
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2d7ad0c6-68d7-4d85-90de-dc5eb9b5c4d7
+    m_ActionName: Camera/LookAroundToggle[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Camera
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &963194232
+--- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -588,7 +556,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541612d7cba5aa94ea6b1d8a9485b961, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cfc5ad963df4004baae5807ab14bf83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &988495242
@@ -601,8 +569,9 @@ GameObject:
   m_Component:
   - component: {fileID: 988495244}
   - component: {fileID: 988495243}
+  - component: {fileID: 988495245}
   m_Layer: 0
-  m_Name: VirtualCamera_30
+  m_Name: VirtualCamera_TP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +622,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988495242}
-  m_LocalRotation: {x: 0.25000006, y: 0.25000006, z: -0.06698733, w: 0.9330127}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -661,7 +630,20 @@ Transform:
   - {fileID: 1032158234}
   m_Father: {fileID: 759360039}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 30, y: 30, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+--- !u!114 &988495245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988495242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f41bf17cc0cb042ac470595f298ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 0
 --- !u!1 &994882988
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,8 +715,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435:\n\u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435:\nWASD\nArrows\nLMB
-    + Mouse\n\u0421\u043C\u0435\u043D\u0430 \u043A\u0430\u043C\u0435\u0440\u044B:\nSpace\nRMB"
+  m_Text: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435:\n\u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435:\nWASD\nArrows\n\u0421\u043C\u0435\u043D\u0430
+    \u043A\u0430\u043C\u0435\u0440\u044B:\nSpace\nLMB"
 --- !u!222 &994882991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -775,6 +757,11 @@ MonoBehaviour:
   _tileSet: {fileID: 11400000, guid: 15b8df12821d40044a314a1b6605e65c, type: 2}
   _terrainSize: 10
   _terrainOrigin: {fileID: 637551335}
+  _cameraSettings: {fileID: 11400000, guid: 162286570cafe174b8a1146737b17a70, type: 2}
+  _cameraManager: {fileID: 963194231}
+  _virtualCameras:
+  - {fileID: 988495245}
+  - {fileID: 2111634444}
 --- !u!4 &1011981489
 Transform:
   m_ObjectHideFlags: 0
@@ -1028,8 +1015,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2111634443}
   - component: {fileID: 2111634442}
+  - component: {fileID: 2111634444}
   m_Layer: 0
-  m_Name: VirtualCamera_Vertical
+  m_Name: VirtualCamera_O
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1080,12 +1068,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111634441}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0.000000014901161, z: -0.000000037252903, w: 0.7071068}
+  m_LocalPosition: {x: 0.00000023841858, y: 15, z: 0.00000047683716}
+  m_LocalScale: {x: 1, y: 1, z: 0.9999999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 78315709}
   m_Father: {fileID: 759360039}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2111634444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111634441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f41bf17cc0cb042ac470595f298ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 1

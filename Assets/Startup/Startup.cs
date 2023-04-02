@@ -1,39 +1,31 @@
-using Cinemachine;
-using UnityEngine;
+using M27.Camera;
 using M27.Generator;
 using M27.Tile;
+using UnityEngine;
 
-namespace M27.Startup 
+namespace M27.Startup
 {
     public class Startup : MonoBehaviour
     {
-        /*
-        [SerializeField] private CinemachineVirtualCamera[] m_virtualCameras;
-        [SerializeField] private CameraMovement m_cameraMovement;
-        [SerializeField] private float m_cameraSpeed;
-        */
-
+        [Header("TerrainGenerator")]
         [SerializeField] private TileSet _tileSet;
         [SerializeField] private int _terrainSize;
         [SerializeField] private Transform _terrainOrigin;
         private TerrainGenerator _terrainGenerator;
 
+        [Header("CameraSettings")]
+        [SerializeField] private CameraSettings _cameraSettings;
+        [SerializeField] private CameraMovementManager _cameraManager;
+        [SerializeField] private VirtualCamera[] _virtualCameras;
+
         private void Start()
         {
-            /*
-            if (m_virtualCameras.Length == 0 || m_cameraMovement == null)
-            {
-                Debug.Log("Check startup settings");
-                return;
-            }
-
-            m_cameraMovement.VirtualCameras = m_virtualCameras;
-            m_cameraMovement.CameraSpeed = m_cameraSpeed;
-            m_cameraMovement.Init();
-            */
-
             _terrainGenerator = new TerrainGenerator(_tileSet, _terrainSize, _terrainOrigin);
             _terrainGenerator.GenerateTerrain();
+
+            _cameraManager.Settings = _cameraSettings;
+            _cameraManager.VirtualCameras = _virtualCameras;
+            _cameraManager.SetActiveCamera(0);
         }
 
 

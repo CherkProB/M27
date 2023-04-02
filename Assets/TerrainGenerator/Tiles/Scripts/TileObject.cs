@@ -6,11 +6,11 @@ namespace M27.Tile
     {
         [SerializeField]
         private int _size;
-        public int Size { get { return _size; } }
+        public int Size { get => _size; }
 
         [SerializeField]
         private TileType _type;
-        public TileType Type { get { return _type; } }
+        public TileType Type { get => _type; }
     }
 }
 

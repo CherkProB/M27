@@ -6,11 +6,12 @@ namespace M27.Generator
     public class TerrainGenerator
     {
         private readonly TileSet _tileSet;
-        public int FieldSize { set { _fieldSize = value; } }
+        public int FieldSize { set => _fieldSize = value; }
         private int _fieldSize;
+        public Transform TerrainOrigin {set => _terrainOrigin = value;  }
         private Transform _terrainOrigin;
 
-        public GameObject[,] Field { get { return _field; } }
+        public GameObject[,] Field { get => _field; }
         private GameObject[,] _field;
 
         public TerrainGenerator(TileSet tileSet, int fieldSize = 5, Transform terrainOrigin = null)
@@ -34,8 +35,6 @@ namespace M27.Generator
                     Vector3 _tilePosition = Vector3.zero;
                     Quaternion _tileRotation = Quaternion.identity;
                     int _tileIndex = 0;
-
-                    Debug.Log(_tile.Size);
 
                     if (i == 0 && j == 0)
                     {

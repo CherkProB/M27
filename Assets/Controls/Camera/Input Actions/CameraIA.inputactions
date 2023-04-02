@@ -1,64 +1,51 @@
 {
-    "name": "Inputs",
+    "name": "CameraIA",
     "maps": [
         {
             "name": "Camera",
-            "id": "157a3289-6157-4f10-8685-3dbc77de794a",
+            "id": "d807f526-a340-4230-bdb8-1e273e821d9d",
             "actions": [
                 {
-                    "name": "Change",
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "1e43f7f5-6e1e-4c80-b640-035eab1af52f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ChangeCamera",
                     "type": "Button",
-                    "id": "77cf3bc3-572b-4013-aab2-dbc53e5a20a3",
+                    "id": "005869f2-73f8-4375-854e-be5f5d8def1b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Move",
+                    "name": "LookAround",
                     "type": "Value",
-                    "id": "39f85dd7-d4ab-4e8b-9645-48466d91b317",
+                    "id": "32c9bc09-10ee-49fa-b350-c943f7e9fc9e",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "MouseMove",
-                    "type": "Value",
-                    "id": "1b11206f-7f24-49dd-9e05-f6bce580a580",
-                    "expectedControlType": "Vector2",
+                    "name": "LookAroundToggle",
+                    "type": "Button",
+                    "id": "2d7ad0c6-68d7-4d85-90de-dc5eb9b5c4d7",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "92207cf2-f3bb-4c20-90bb-981f16c87130",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Change",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cbe802f8-a633-47b5-89c6-b47476a7b41f",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Change",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "WASD",
-                    "id": "11672cdb-d2a3-48bc-9721-1c7e8229fd56",
+                    "id": "991b9efc-3636-4a37-b9af-942dd3b4a105",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -69,7 +56,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "5c3327a9-9bfe-4000-a07f-67e707d1c155",
+                    "id": "a00126a3-eab5-4c07-80ce-f9ebf053483d",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -80,7 +67,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "fa625413-718d-40ea-92ad-437067ef2039",
+                    "id": "dc042a20-c228-4d9a-b32b-0438dde10a06",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -91,7 +78,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "142e0db9-c226-41e7-8916-ef13131079b3",
+                    "id": "0d3c4ce7-6573-4286-be73-0cb735c1cacc",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -102,7 +89,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "914f407c-4d84-478f-9af4-e2f4f9b580d7",
+                    "id": "dd523b61-dea6-4439-aac7-db4709c3ab56",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -113,7 +100,7 @@
                 },
                 {
                     "name": "Arrows",
-                    "id": "21a6653f-9c8f-4a7b-83f8-8bef365aad81",
+                    "id": "91c34780-1f94-4815-ad0c-4d579f3c4e5b",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -124,7 +111,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "8868ef9d-065d-41cc-8fde-5ad19ab4b4a3",
+                    "id": "688eef1d-dc56-4b7a-b971-4b8ffba1c845",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
@@ -135,7 +122,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "b5007596-a7c8-43c0-a565-6cce49400324",
+                    "id": "dd1f4188-ddc0-4ed7-9d19-a8e58b844fc7",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
@@ -146,7 +133,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "26dcdf8c-866f-4ac2-8473-72f8f85870cf",
+                    "id": "4e5c6f29-a03a-4319-9669-badf0722cf91",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -157,7 +144,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "45c023c3-5e16-4c94-be76-f7810ec2409f",
+                    "id": "01fda975-ce17-4f7f-916a-2850183940f3",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
@@ -168,12 +155,45 @@
                 },
                 {
                     "name": "",
-                    "id": "a6824c20-a9e2-4115-97e3-9433b3921079",
+                    "id": "f82fdc90-33c9-4953-a175-7aedf72bf1c7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c25f4fe-6825-4bc1-95ce-8ffc7dcb0dc3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "65ac2ab1-d69c-4f36-a47f-218fe4c30725",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookAroundToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62114292-3b67-490f-a4ca-112ae45bc88a",
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MouseMove",
+                    "action": "LookAround",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
