@@ -36,24 +36,14 @@ namespace M27.Camera
 
         private void Update()
         {
-            if (_behaviour.MoveDirection != Vector3.zero) 
+            if (_behaviour.MoveDirection != Vector3.zero)
             {
                 float _camRotation = _virtualCameras[_currentVirtualCamera].YRotation;
-
-                Vector3 _posDeltaZ = new Vector3(
-                     _behaviour.MoveDirection.z * Mathf.Sin(_camRotation * Mathf.Deg2Rad),
-                     0,
-                     _behaviour.MoveDirection.z * Mathf.Cos(_camRotation * Mathf.Deg2Rad));
-                
-                //TODO:
-                Vector3 _posDeltaX = new Vector3(
-                     _behaviour.MoveDirection.x * Mathf.Cos(_camRotation * Mathf.Deg2Rad),
-                     0,
-                     _behaviour.MoveDirection.x * Mathf.Sin(_camRotation * Mathf.Deg2Rad));
-
+                Vector3 forward = new Vector3(Mathf.Sin(_camRotation * Mathf.Deg2Rad), 0, Mathf.Cos(_camRotation * Mathf.Deg2Rad));
+                Vector3 right = transform.TransformDirection(Vector3.right);
 
                 foreach (VirtualCamera _vc in _virtualCameras)
-                    _vc.Camera.transform.position += (_posDeltaX + _posDeltaZ )* _settings.CameraSpeed * Time.deltaTime;
+                    _vc.Camera.transform.position += (forward * _behaviour.MoveDirection.z + right * _behaviour.MoveDirection.x) * _settings.CameraSpeed * Time.deltaTime;
             }
 
             if (_behaviour.RotationDirection != Vector3.zero)
